@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style type="text/css">
+        div{
+            width = 800px;
+            margin-top : 50px;
+        }
+        body {
+            width : 50%;
+            margin:auto;
+        }
+        h {
+            font-size: 40px;
+            font-style: italic;
+            color : #9370DB;
+        }
+        a {
+            text-decoration : none;
+            color : black;
+            font-weight : bold;
+        }
+        span.footer {
+            margin : auto;
+            width : 200px;
+            align : center;
+            border: 2pt solid black;
+            padding : 5pt;
+            background-color : #9370DB;
+            letter-spacing: 3px;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 20px;
+            width: 50%;
+        }
+        h2{
+            color : #9370DB;
+        }
+
+    </style>
+</head>
+<body align="center" topmargin="80">
+<div>
+    <h1> The origin text : </h1>
+    <h2><span th:text="${morse.strToWork}" > </span></h2>
+</div>
+<div>
+    <h1> Morse Code : </h1>
+    <h><span th:text="${morse.result}" > </span></h>
+</div>
+</body>
+<footer>
+    <span class="footer"> <a href="/yourChoice/morseInput">Code another text</a></span>
+    <span class = "footer"><a href="/yourChoice">Chose another Cipher</a></span>
+    <span class = "footer"><a href="/home">Home page</a></span>
+    <span class = "footer"><a href="/yourChoice/history">History</a></span>
+</footer>
+</html>

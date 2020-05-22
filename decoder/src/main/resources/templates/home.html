@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OOP_Lab#2</title>
+    <style type="text/css">
+
+        p {
+            margin : auto;
+            width : 250px;
+            align : center;
+            border: 2pt solid black;
+            padding : 5pt;
+            background-color : #9370DB;
+            letter-spacing: 3px;
+            margin-bottom : 5px;
+        }
+        p.history {
+            width : 175px;
+        }
+        span{
+            align : center;
+        }
+        a {
+            text-decoration : none;
+            color : black;
+            font-weight : bold;
+        }
+        h2 {
+            margin-bottom : 35px;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+<h1>
+   . . . . . . . . . . • Welcome to the DECODER online! • . . . . . . . . . .
+</h1>
+    <span> <img src="../static/home.png" width="350"
+                th:src="@{/home.png}"/>
+    </span>
+<h2>
+    You can decipher the code of Caesar or convert your text into the Morse or ASCII code here.
+</h2>
+<p> <a href="/yourChoice">LET'S START</a></p><p class = "history"> <a href="/yourChoice/history">History</a></p>
+</div>
+</body>
+</html>

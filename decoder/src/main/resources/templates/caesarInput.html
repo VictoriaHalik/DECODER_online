@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Caesar</title>
+    <style type="text/css">
+        p {
+            margin : auto;
+            margin-bottom : 0;
+            width : 400px;
+            align : center;
+            border: 2pt dotted black;
+            padding : pt;
+            color : #9370DB;
+        }
+        span{
+            align : center;
+        }
+        body{
+            margin : auto;
+        }
+        img {
+            margin-top : 10px;
+        }
+        h2 {
+            margin-top : 10px;
+        }
+        input {
+            width : 143px;
+            border: 3px solid black;
+        }
+         button {
+            margin-top: 10px;
+            padding : 7px;
+            width : 100px;
+           background-color : #9370DB;
+            color: black;
+            text-weight : bold;
+            border : 2pt solid black;
+
+        }
+        textarea {
+            border : 3px solid black;
+        }
+
+    </style>
+</head>
+<body align="center">
+<span>
+    <img src="../static/caesar.png" width="400"
+         th:src="@{/caesar.png}"/>
+<p>
+    In cryptography, a Caesar cipher, also known as the shift cipher,
+    is one of the simplest and most widely known encryption techniques.
+    It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter
+    some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be
+    replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in
+    his private correspondence.
+</p>
+</span>
+<h2> Enter text and key to encrypt : </h2>
+<form th:action="@{/yourChoice/caesarInput}" method = "post" th:object="${cipher}">
+    <div class="input">
+    <textarea rows="6" cols="53" th:field="*{strToWork}"></textarea>
+    </div>
+    <div class="input">
+        <span><h>Positive key - right shift, negative - left:</h></span>
+    <input type="text" th:field="*{keyIn}">
+    <div>
+        <span><button type="submit"> Submit </button></span>
+        <span><button type="reset"> Reset </button></span>
+    </div>
+    </div>
+
+</form>
+</body>
+</html>

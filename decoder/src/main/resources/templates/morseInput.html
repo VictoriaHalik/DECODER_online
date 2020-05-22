@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse</title>
+    <style type="text/css">
+
+        p {
+            margin : auto;
+            width : 400px;
+            align : center;
+            border: 2pt dotted black;
+            padding : 10pt;
+            color : #9370DB;
+        }
+        span{
+            align : center;
+        }
+        button {
+            margin-top: 10px;
+            padding : 7px;
+            width : 100px;
+            background-color : #9370DB;
+            color: black;
+            text-weight : bold;
+            border : 2pt solid black;
+
+        }
+        textarea {
+            border : 3px solid black;
+        }
+    </style>
+</head>
+<body align="center">
+<span>
+    <img src="../static/morse_code.jpg" width="400"
+             th:src="@{/morse_code.jpg}"/>
+<p>
+    Morse code is a method used in telecommunication to encode text characters as standardized sequences of two
+    different signal durations, called dots and dashes or dits and dahs.
+    Morse code is named for Samuel Morse, an inventor of the telegraph.
+</p>
+</span>
+<h2> Enter text to convert into Morse Code: </h2>
+<form th:action="@{/yourChoice/morseInput}" method = "post" th:object="${cipher}">
+<div>
+    <textarea rows="6" cols="55" th:field="*{strToWork}"></textarea>
+</div>
+    <button type="submit"> Submit </button>
+    <button type="reset"> Reset </button>
+</form>
+
+</body>
+</html>

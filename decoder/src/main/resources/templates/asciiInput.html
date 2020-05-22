@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII</title>
+    <style type="text/css">
+        p {
+            margin : auto;
+            width : 400px;
+            align : center;
+            border: 2pt dotted black;
+            padding : 10pt;
+            color : #9370DB;
+        }
+        span{
+            align : center;
+        }
+        button {
+            margin-top: 10px;
+            padding : 7px;
+            width : 100px;
+            background-color : #9370DB;
+            color: black;
+            text-weight : bold;
+            border : 2pt solid black;
+
+        }
+        textarea {
+            border : 3px solid black;
+        }
+    </style>
+</head>
+<body align="center">
+<span>
+    <img src="../static/ASCII.png" width="400"
+         th:src="@{/ASCII.png}"/>
+<p>
+    ASCII abbreviated from American Standard Code for Information Interchange, is a character encoding
+    standard for electronic communication. ASCII codes represent text in computers, telecommunications
+    equipment, and other devices. Most modern character-encoding schemes are based on ASCII, although
+    they support many additional characters.
+</p>
+</span>
+<h2> Enter text to convert into ASCII Code: </h2>
+<form th:action="@{/yourChoice/asciiInput}" method = "post" th:object="${cipher}">
+    <div>
+        <textarea rows="6" cols="55" th:field="*{strToWork}"></textarea>
+    </div>
+    <button type="submit"> Submit </button>
+    <button type="reset"> Reset </button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+    <style type="text/css">
+        div{
+            width = 800px;
+            margin-top : 20px;
+            display : block;
+        }
+        body {
+            width : 80%;
+            margin:auto;
+        }
+        h2 {
+            margin-top : 70px;
+            color : red;
+        }
+        h3{
+            margin-bottom : 30px;
+            color : #9370DB;
+        }
+        a {
+            text-decoration : none;
+            color : black;
+            font-weight : bold;
+        }
+        span.footer {
+            margin : auto;
+            width : 200px;
+            align : center;
+            border: 2pt solid black;
+            padding : 5pt;
+            background-color : #9370DB;
+            letter-spacing: 3px;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 20px;
+            width: 80%;
+        }
+        div.text {
+            font-weight : bold;
+            text-size : 55px;
+        }
+        span.text{
+            color : #9370DB;
+        }
+    </style>
+</head>
+<body align="center" topmargin="80">
+<h1>...• History of your conversions •... </h1>
+<div>
+    <tr>
+        <div th:if="${#lists.isEmpty(history)}">
+            <h2>The history of your conversions is empty... </h2>
+        </div>
+    </tr>
+    <tr>
+        <div th:if="${not #lists.isEmpty(history)}">
+            <h3>Cipher name.......The origin text.......Converted text.......Time of conversion </h3>
+            <p>•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••</p>
+        </div>
+    </tr>
+
+    <tr th:each="conversion : ${history}">
+        <div class = "text" >
+        <span   th:text="${conversion.name}"></span>
+            <span>.....</span>
+        <span  class="text" th:text="${conversion.originText}"></span>
+            <span>.....</span>
+        <span   class ="text" th:text="${conversion.newText}"></span>
+            <span>.....</span>
+        <span   th:text="${conversion.time}"></span>
+        </div>
+    </tr>
+</div>
+<div>
+</div>
+</body>
+<footer>
+    <span class = "footer"><a href="/yourChoice">Chose the Cipher</a></span>
+    <span class = "footer"><a href="/home">Home page</a></span>
+</footer>
+</html>

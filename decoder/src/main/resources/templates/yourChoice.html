@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Chose the Cipher</title>
+    <style type="text/css">
+        button {
+            width : 50pt;
+        }
+        h1 {
+            margin-top : 40px;
+            margin-bottom : 40px;
+        }
+        input {
+            width : 300px;
+            height : 30px;
+            border: 3px solid black;
+        }
+        button {
+            margin-top: 20px;
+            padding : 7px;
+            width : 100px;
+            background-color : #9370DB;
+            color: black;
+            text-weight : bold;
+            border : 2pt solid black;
+        }
+
+        h2{
+            color : #9370DB;
+        }
+
+    </style>
+</head>
+<body align = "center">
+<h1>Enter Code to choose </h1>
+<h3>Available options :</h3>
+<h2>• CAESAR</h2>
+<h2>• MORSE</h2>
+<h2>• ASCII</h2>
+<form th:action="@{/yourChoice}" method = "post" th:object="${choiceKeeper}">
+        <input type="text" th:field="*{choice}">
+    <div>
+        <button type="submit"> Submit </button>
+        <button type="reset"> Reset </button>
+    </div>
+</form>
+</body>
+</html>
