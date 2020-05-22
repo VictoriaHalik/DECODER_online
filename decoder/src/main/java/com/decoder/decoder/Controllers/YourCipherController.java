@@ -33,11 +33,6 @@ public class YourCipherController {
         YourCipherController.History = history;
     }
 
-
-
-    public ArrayList<String> testList = new ArrayList<String>();
-
-
     ////////////////////////// Factory for the Cipher creating ///////////////////////////////
 
     public static IFactory createFactory(String choice){      // factory for creating cipher and conversion
