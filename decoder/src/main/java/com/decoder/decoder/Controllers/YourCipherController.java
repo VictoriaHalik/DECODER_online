@@ -29,7 +29,7 @@ public class YourCipherController {
     IConversion conversion;
 
     @Autowired
-    public YourCipherController(com.decoder.decoder.History.History history){
+    public YourCipherController(IHistory history){
         YourCipherController.History = history;
     }
 
